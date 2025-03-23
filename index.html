@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Wallet Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Telegram Wallet</h1>
+        <p>Login with Telegram to access your wallet.</p>
+
+        <!-- Telegram Login Widget -->
+        <script async src="https://telegram.org/js/telegram-widget.js?7"
+            data-telegram-login="@taskmamabot"
+            data-size="large"
+            data-auth-url="https://your-backend-url.vercel.app/api/auth"
+            data-request-access="write"></script>
+
+        <div id="user-info" style="display: none;">
+            <h2>Welcome, <span id="username"></span>!</h2>
+            <p>Your Telegram ID: <span id="user-id"></span></p>
+            <button onclick="checkBalance()">Check Balance</button>
+            <p id="balance"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
